@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { WxServiceService as WxService} from './wx-service.service';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ps7';
+  title = 'PS7: Weather App';
 }
+

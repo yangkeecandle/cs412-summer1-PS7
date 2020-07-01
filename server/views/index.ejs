@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather APP</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div class="container">
+      <header>
+        <div class="weather-icon"><img src="/images/weather.svg"
+        alt=""></div>
+      </header>
+      <div class="weather-title">
+          <h1>Weather App</h1>
+          <p>Type a city name to view its current temperature</p>
+      </div>
+      <form action="/" method="POST">
+          <input type="text" name="city" class="ghost-input"
+                 placeholder="Enter a city">
+      </form>
+      <div class="result">
+          <% if(temp !== null)  {%>
+              <h1 class="temp"><%= temp %></h1>
+          <% } %>
+
+              <% if(city !== null)  {%>
+                  <p class="city"><%= city %></p>
+              <% } %>
+
+      </div>
+  </div>
+</body>
+</html>

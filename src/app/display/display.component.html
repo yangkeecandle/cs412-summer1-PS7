@@ -1,0 +1,9 @@
+<div name="displayWeather">
+  <br *ngFor="let currentWeather of currentWeathers">
+    <div name="details" *ngIf="temperature">
+      Temperature: {{currentWeather.temperature}} </div>
+    <div name="details" *ngIf="pressure">
+      Pressure: {{currentWeather.pressure}} </div>
+    <div name="details" *ngIf="humidity">
+      Humidity: {{currentWeather.humidity}} </div>
+</div>

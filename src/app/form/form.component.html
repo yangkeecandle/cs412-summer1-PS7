@@ -1,0 +1,39 @@
+<body>
+<div class="container">
+  <header>
+    <div class="weather-icon"><img src="/images/weather.svg"
+                                   alt=""></div>
+  </header>
+  <div class="weather-title">
+    <h1>Weather App</h1>
+    <p>Type a city name to view its current temperature</p>
+  </div>
+  <div *ngFor = "let name of names | async">
+    {{name.name}}
+  </div>
+  <form [formGroup]="weatherForm" (ngSubmit)="getWeather()">
+    <input  type = "text" name = "city" formControlName="cityControl"
+            placeholder = "Enter a city" required minlength="1"
+            [(ngModel)]= city.name #name="ngModel"> : {{city}}<br/>
+    <input  type = "text" name = "unit" formControlName="unitsControl"
+            placeholder = "Enter unit" required minlength="1"
+            [(ngModel)]= unit.name #name="ngModel"><br/>
+    <button type="submit">Click</button>
+
+    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="name.errors.minlength">
+        Name must be at least 1 character long
+      </div>
+    </div>
+  </form>
+
+</div>
+</body>
+
+
+
